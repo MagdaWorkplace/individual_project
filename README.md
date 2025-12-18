@@ -1,1 +1,1 @@
-# Magdalena_Mihaylova
+# individual_project

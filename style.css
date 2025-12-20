@@ -15,52 +15,52 @@ body {
   background: linear-gradient(135deg, #8EC5FC, #D9C0FF);
   min-height: 100vh;
   display: flex;
-  justify-content: center;   /* center vertically */
-  align-items: center;       /* center horizontally */
-  overflow-x: hidden;
-  position: relative;
-  padding: 0 20px;           /* horizontal padding */
-  text-align: center;         /* center all text inside */
+  justify-content: center;       /* Center main content vertically */
+  align-items: center;           /* Center horizontally */
   flex-direction: column;
+  padding: 0 20px;
+  text-align: center;            /* Center all text */
+  overflow-x: hidden;            /* Prevent horizontal scroll */
+  position: relative;            /* Needed for floating stars */
 }
 
 /* =========================
-   Main text container
+   3. MAIN TEXT CONTAINER
    ========================= */
 .main-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;                 /* space between elements */
-}
-
-/* Button group under text */
-.button-group {
-  display: flex;
-  gap: 15px;                 /* space between buttons */
-  margin-top: 20px;
-  flex-wrap: wrap;
-  justify-content: center;   /* center the buttons */
+  gap: 15px;                     /* Space between elements */
 }
 
 /* =========================
-   3. TEXT STYLES
+   4. BUTTON GROUP
+   ========================= */
+.button-group {
+  display: flex;
+  gap: 15px;                     /* Space between buttons */
+  margin-top: 20px;
+  flex-wrap: wrap;               /* Wrap on smaller screens */
+  justify-content: center;       /* Center the buttons horizontally */
+}
+
+/* =========================
+   5. TEXT STYLES
    ========================= */
 h1 {
-  font-family: 'Baloo 2', cursive;                /* Cute title font */
+  font-family: 'Baloo 2', cursive;                
   font-size: 4rem;
   color: #FFF5E1;
-  text-align: center;
   margin-bottom: 1rem;
-  animation: bounce 2s infinite;
+  animation: bounce 2s infinite;  /* Floating animation */
 }
 
 h2 {
-  font-family: 'Comic Neue', cursive;            /* Playful subtitle font */
+  font-family: 'Comic Neue', cursive;            
   font-size: 2rem;
   color: #5D5CFF;
-  text-align: center;
   margin-bottom: 1rem;
 }
 
@@ -68,36 +68,15 @@ p {
   font-size: 1.2rem;
   color: #333;
   max-width: 600px;
-  text-align: center;
   margin-bottom: 2rem;
 }
 
 /* =========================
-   4. MAIN TEXT + BUTTON GROUP
-   ========================= */
-.main-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 15px;         /* Space between text elements */
-  margin-top: 50px;  /* Push a bit down from top */
-}
-
-.button-group {
-  display: flex;
-  gap: 15px;         /* Space between buttons */
-  margin-top: 20px;
-  flex-wrap: wrap;   /* Wrap on small screens */
-}
-
-/* =========================
-   5. CTA BUTTONS (used in button group)
+   6. CTA BUTTONS
    ========================= */
 .cta-button {
-  background-color: #A8E6CF;                       /* Soft green */
-  color: #5D5CFF;                                  /* Blue text */
+  background-color: #A8E6CF;                       
+  color: #5D5CFF;                                  
   padding: 12px 30px;                              
   border: none;
   border-radius: 25px;
@@ -113,11 +92,11 @@ p {
 .cta-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  color: #FFF5E1;       /* Optional: invert text on hover */
+  color: #FFF5E1;       
 }
 
 /* =========================
-   6. FLOATING STARS
+   7. FLOATING STARS
    ========================= */
 .star {
   position: absolute;
@@ -130,7 +109,7 @@ p {
 }
 
 /* =========================
-   7. ANIMATIONS
+   8. ANIMATIONS
    ========================= */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
@@ -145,7 +124,7 @@ p {
 }
 
 /* =========================
-   8. PROJECT CARDS (for Projects page)
+   9. PROJECT CARDS (for Projects page)
    ========================= */
 .project-card {
   background-color: #FFF5E1;
@@ -171,4 +150,56 @@ p {
 .project-card p {
   font-size: 1rem;
   color: #333;
+}
+
+/* =========================
+   10. ABOUT PAGE CARDS (Creative layout)
+   ========================= */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0; /* space between main text and buttons */
+}
+
+.about-card {
+  background-color: #FFF5E1;
+  border-radius: 25px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.about-card h3 {
+  color: #5D5CFF;
+  margin-bottom: 10px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.about-card p {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Float animation for Lottie inside cards */
+.about-card dotlottie-wc {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }

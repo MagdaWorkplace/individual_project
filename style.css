@@ -55,23 +55,34 @@ p {
 }
 
 /* =========================
-   4. BUTTON
+   4. Navigation buttons (like CTA)
    ========================= */
-.cta-button {
-  background-color: #A8E6CF;                       /* Soft green */
-  color: #5D5CFF;                                  /* Blue text */
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;    /* Center nav buttons */
+  gap: 20px;                  /* Space between buttons */
+  margin-bottom: 30px;
+  flex-wrap: wrap;            /* Wrap on small screens */
 }
 
-.cta-button:hover {
+.nav-button {
+  text-decoration: none;       /* Remove underline */
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #5D5CFF;              /* Same as CTA text */
+  background-color: #A8E6CF;   /* Same as CTA background */
+  padding: 12px 30px;          /* Same padding as CTA */
+  border-radius: 25px;         /* Same round corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  color: #FFF5E1;             /* Optional: invert text on hover */
 }
 
 /* =========================

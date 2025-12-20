@@ -55,38 +55,51 @@ p {
 }
 
 /* =========================
-   4. Navigation buttons (like CTA)
+   4. MAIN TEXT + BUTTON GROUP
    ========================= */
-.nav-bar {
-  width: 100%;
+.main-text {
   display: flex;
-  justify-content: center;    /* Center nav buttons */
-  gap: 20px;                  /* Space between buttons */
-  margin-bottom: 30px;
-  flex-wrap: wrap;            /* Wrap on small screens */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;         /* Space between text elements */
+  margin-top: 50px;  /* Push a bit down from top */
 }
 
-.nav-button {
-  text-decoration: none;       /* Remove underline */
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  color: #5D5CFF;              /* Same as CTA text */
-  background-color: #A8E6CF;   /* Same as CTA background */
-  padding: 12px 30px;          /* Same padding as CTA */
-  border-radius: 25px;         /* Same round corners */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.nav-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  color: #FFF5E1;             /* Optional: invert text on hover */
+.button-group {
+  display: flex;
+  gap: 15px;         /* Space between buttons */
+  margin-top: 20px;
+  flex-wrap: wrap;   /* Wrap on small screens */
 }
 
 /* =========================
-   5. FLOATING STARS
+   5. CTA BUTTONS (used in button group)
+   ========================= */
+.cta-button {
+  background-color: #A8E6CF;                       /* Soft green */
+  color: #5D5CFF;                                  /* Blue text */
+  padding: 12px 30px;                              
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-decoration: none;  /* For <a> tags */
+  display: inline-block;  /* Make padding work */
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  color: #FFF5E1;       /* Optional: invert text on hover */
+}
+
+/* =========================
+   6. FLOATING STARS
    ========================= */
 .star {
   position: absolute;
@@ -99,17 +112,14 @@ p {
 }
 
 /* =========================
-   6. ANIMATIONS
+   7. ANIMATIONS
    ========================= */
-
-/* Title bounce animation */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-20px); }
   60% { transform: translateY(-10px); }
 }
 
-/* Stars floating animation */
 @keyframes starFloat {
   0% { transform: translateY(0) translateX(0); opacity: 0.8; }
   50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
@@ -117,7 +127,7 @@ p {
 }
 
 /* =========================
-   7. PROJECT CARDS (for Projects page)
+   8. PROJECT CARDS (for Projects page)
    ========================= */
 .project-card {
   background-color: #FFF5E1;
@@ -127,4 +137,20 @@ p {
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   margin: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-a
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+  color: #5D5CFF;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #333;
+}

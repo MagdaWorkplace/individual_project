@@ -11,19 +11,37 @@
    2. PAGE BACKGROUND & LAYOUT
    ========================= */
 body {
-  font-family: 'Poppins', sans-serif;              /* Default text font */
-  background: linear-gradient(135deg,              /* Soft pastel gradient */
-    #8EC5FC,
-    #D9C0FF
-  );
-  min-height: 100vh;                               /* Full screen height */
-  display: flex;                                   /* Flex layout */
-  flex-direction: column;                          /* Stack elements vertically */
-  align-items: center;                             /* Center horizontally */
-  justify-content: flex-start;                     /* Start from top */
-  overflow-x: hidden;                              /* Prevent side scrolling */
-  position: relative;                              /* Needed for stars */
-  padding: 40px 20px;                              /* Space inside page */
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #8EC5FC, #D9C0FF);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* center vertically */
+  align-items: center;       /* center horizontally */
+  overflow-x: hidden;
+  position: relative;
+  padding: 0 20px;           /* horizontal padding */
+  text-align: center;         /* center all text inside */
+  flex-direction: column;
+}
+
+/* =========================
+   Main text container
+   ========================= */
+.main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;                 /* space between elements */
+}
+
+/* Button group under text */
+.button-group {
+  display: flex;
+  gap: 15px;                 /* space between buttons */
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;   /* center the buttons */
 }
 
 /* =========================

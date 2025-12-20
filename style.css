@@ -1,8 +1,6 @@
 /* =========================
    1. RESET (clean start)
    ========================= */
-
-/* Removes default browser spacing and fixes sizing issues */
 * {
   margin: 0;                 /* Remove default margin */
   padding: 0;                /* Remove default padding */
@@ -12,7 +10,6 @@
 /* =========================
    2. PAGE BACKGROUND & LAYOUT
    ========================= */
-
 body {
   font-family: 'Poppins', sans-serif;              /* Default text font */
   background: linear-gradient(135deg,              /* Soft pastel gradient */
@@ -20,39 +17,39 @@ body {
     #D9C0FF
   );
   min-height: 100vh;                               /* Full screen height */
-  display: flex;                                   /* Enable flexbox */
+  display: flex;                                   /* Flex layout */
   flex-direction: column;                          /* Stack elements vertically */
   align-items: center;                             /* Center horizontally */
-  justify-content: center;                         /* Center vertically */
+  justify-content: flex-start;                     /* Start from top */
   overflow-x: hidden;                              /* Prevent side scrolling */
   position: relative;                              /* Needed for stars */
+  padding: 40px 20px;                              /* Space inside page */
 }
 
 /* =========================
    3. TEXT STYLES
    ========================= */
-
 h1 {
-  font-family: 'Baloo 2', cursive;                  /* Cute title font */
-  font-size: 4rem;                                 /* Big title */
-  color: #FFF5E1;                                  /* Soft cream color */
-  text-align: center;                              /* Center text */
-  margin-bottom: 1rem;                             /* Space below */
-  animation: bounce 2s infinite;                   /* Bouncy animation */
+  font-family: 'Baloo 2', cursive;                /* Cute title font */
+  font-size: 4rem;
+  color: #FFF5E1;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
 }
 
 h2 {
-  font-family: 'Comic Neue', cursive;               /* Playful subtitle font */
+  font-family: 'Comic Neue', cursive;            /* Playful subtitle font */
   font-size: 2rem;
-  color: #5D5CFF;                                  /* Blue accent */
+  color: #5D5CFF;
   text-align: center;
   margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.2rem;                               /* Readable text size */
-  color: #333;                                     /* Dark gray text */
-  max-width: 600px;                                /* Prevent long lines */
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 600px;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -60,79 +57,63 @@ p {
 /* =========================
    4. BUTTON
    ========================= */
-
 .cta-button {
   background-color: #A8E6CF;                       /* Soft green */
   color: #5D5CFF;                                  /* Blue text */
-  padding: 12px 30px;                              /* Button size */
-  border: none;                                    /* No border */
-  border-radius: 25px;                             /* Rounded corners */
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
   font-size: 1.2rem;
-  cursor: pointer;                                 /* Pointer cursor */
-  transition: all 0.3s ease;                       /* Smooth hover */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);            /* Soft shadow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
-  transform: scale(1.1);                           /* Grow on hover */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);           /* Deeper shadow */
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* =========================
-   6. FLOATING STARS
+   5. FLOATING STARS
    ========================= */
-
 .star {
-  position: absolute;                              /* Free positioning */
+  position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #FFF5E1;                       /* Star color */
-  border-radius: 50%;                              /* Round shape */
-  animation: starFloat 5s infinite;                /* Floating effect */
+  background-color: #FFF5E1;
+  border-radius: 50%;
+  animation: starFloat 5s infinite;
+  z-index: 1; /* behind text */
 }
 
 /* =========================
-   7. ANIMATIONS
+   6. ANIMATIONS
    ========================= */
 
 /* Title bounce animation */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);                      /* Normal position */
-  }
-  40% {
-    transform: translateY(-20px);                  /* Big bounce */
-  }
-  60% {
-    transform: translateY(-10px);                  /* Small bounce */
-  }
-}
-
-/* Mascot floating animation */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);                  /* Moves up */
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
 }
 
 /* Stars floating animation */
 @keyframes starFloat {
-  0% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-20px) translateX(10px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.8;
-  }
+  0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.8; }
 }
+
+/* =========================
+   7. PROJECT CARDS (for Projects page)
+   ========================= */
+.project-card {
+  background-color: #FFF5E1;
+  border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  margin: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-a

@@ -79,38 +79,6 @@ p {
 }
 
 /* =========================
-   5. MASCOT (CIRCLE IN CORNER)
-   ========================= */
-
-.mascot-circle {
-  position: fixed;                                 /* Stays in corner */
-  bottom: 20px;                                    /* Distance from bottom */
-  right: 20px;                                     /* Distance from right */
-  width: 220px;                                    /* Circle size */
-  height: 220px;
-  border-radius: 50%;                              /* Makes circle */
-  overflow: hidden;                                /* Clips square animation */
-  background-color: #FFF5E1;                       /* Cute background */
-  display: flex;                                   /* Center animation */
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);          /* Floating look */
-  animation: float 3s ease-in-out infinite;        /* Gentle movement */
-  z-index: 10;                                     /* On top of stars */
-}
-
-/* Make animation fill the circle */
-.mascot-circle dotlottie-wc {
-  width: 100%;
-  height: 100%;
-}
-
-/* Small hover effect */
-.mascot-circle:hover {
-  transform: scale(1.05);                          /* Slight zoom */
-}
-
-/* =========================
    6. FLOATING STARS
    ========================= */
 

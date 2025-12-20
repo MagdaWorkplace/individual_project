@@ -1,40 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Magda</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Comic+Neue:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Lottie Web Component -->
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
 </head>
-<body>
+<body class="about-page">
 
-  <h1>About Me</h1>
-  <h2>Hi! I'm Magda, a curious 2nd-year CS student</h2>
-  <p>
-    I love building projects, learning new things every day, and exploring cute design ideas.
-    I enjoy creating fun animations and interactive websites.
-  </p>
-
-  <!-- Skills section -->
-  <h2>My Skills</h2>
-  <ul class="skills">
-    <li>💻 Web Development (HTML, CSS, JS)</li>
-    <li>🖌️ Design & UI/UX</li>
-    <li>🤖 Experimenting with AI</li>
-    <li>🎨 Cute animations & illustrations</li>
-  </ul>
-
-  <!-- Optional floating illustration -->
-  <div class="about-mascot">
-    <dotlottie-wc
-      src="https://assets9.lottiefiles.com/packages/lf20_xfz3vz8y.lottie"
-      autoplay
-      loop
-      style="width: 180px; height: 180px;">
-    </dotlottie-wc>
+  <!-- Main centered intro -->
+  <div class="main-text">
+    <h1>About Me</h1>
+    <h2>Hi! I'm Magda</h2>
+    <p>I’m a 2nd-year Computer Science student who loves building new projects, learning new things, and exploring creative ideas.</p>
   </div>
+
+  <!-- Creative cards section -->
+  <div class="cards-container">
+
+    <!-- Hobbies -->
+    <div class="about-card">
+      <dotlottie-wc src="https://lottie.host/your-paintbrush-animation-url/animation.lottie" style="width:80px;height:80px;margin-bottom:10px;" autoplay loop></dotlottie-wc>
+      <h3>Hobbies</h3>
+      <p>Drawing, gaming, experimenting with animations, exploring cute design ideas.</p>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="about-card">
+      <dotlottie-wc src="https://lottie.host/your-star-animation-url/animation.lottie" style="width:80px;height:80px;margin-bottom:10px;" autoplay loop></dotlottie-wc>
+      <h3>Soft Skills</h3>
+      <p>Teamwork, communication, creativity, problem-solving, adaptability.</p>
+    </div>
+
+    <!-- Hard Skills -->
+    <div class="about-card">
+      <dotlottie-wc src="https://lottie.host/your-computer-animation-url/animation.lottie" style="width:80px;height:80px;margin-bottom:10px;" autoplay loop></dotlottie-wc>
+      <h3>Hard Skills</h3>
+      <p>Web development (HTML, CSS, JS), Python, UI/UX design, basic AI experiments.</p>
+    </div>
+
+    <!-- Languages -->
+    <div class="about-card">
+      <dotlottie-wc src="https://lottie.host/your-language-animation-url/animation.lottie" style="width:80px;height:80px;margin-bottom:10px;" autoplay loop></dotlottie-wc>
+      <h3>Languages</h3>
+      <p>English, [Your other languages], [Another language]</p>
+    </div>
+
+  </div>
+
+  <!-- CTA buttons under cards -->
+  <div class="button-group">
+    <a href="index.html" class="cta-button">Home</a>
+    <a href="projects.html" class="cta-button">My Projects</a>
+    <a href="contact.html" class="cta-button">Contact</a>
+  </div>
+
+  <!-- Decorative floating stars -->
+  <div class="star" style="top:50px; left:30px;"></div>
+  <div class="star" style="top:150px; left:200px;"></div>
+  <div class="star" style="top:250px; left:100px;"></div>
+  <div class="star" style="top:100px; left:400px;"></div>
+  <div class="star" style="top:300px; left:350px;"></div>
 
 </body>
 </html>

@@ -1,44 +1,44 @@
 /* =========================
-   1. GLOBAL RESET
+   1. RESET (clean start)
    ========================= */
 
-/* Removes default browser spacing and makes sizing predictable */
+/* Removes default browser spacing and fixes sizing issues */
 * {
-  margin: 0;                 /* Removes default margins */
-  padding: 0;                /* Removes default padding */
-  box-sizing: border-box;    /* Includes padding/border in width & height */
+  margin: 0;                 /* Remove default margin */
+  padding: 0;                /* Remove default padding */
+  box-sizing: border-box;    /* Makes width/height easier to control */
 }
 
 /* =========================
-   2. BODY / PAGE LAYOUT
+   2. PAGE BACKGROUND & LAYOUT
    ========================= */
 
 body {
-  font-family: 'Poppins', sans-serif;              /* Default font for text */
-  background: linear-gradient(135deg,              /* Soft gradient background */
+  font-family: 'Poppins', sans-serif;              /* Default text font */
+  background: linear-gradient(135deg,              /* Soft pastel gradient */
     #8EC5FC,
     #D9C0FF
   );
   min-height: 100vh;                               /* Full screen height */
-  display: flex;                                   /* Enables flexbox */
-  flex-direction: column;                          /* Stack items vertically */
+  display: flex;                                   /* Enable flexbox */
+  flex-direction: column;                          /* Stack elements vertically */
   align-items: center;                             /* Center horizontally */
   justify-content: center;                         /* Center vertically */
-  overflow-x: hidden;                              /* Prevents horizontal scroll */
-  position: relative;                              /* Needed for absolute elements */
+  overflow-x: hidden;                              /* Prevent side scrolling */
+  position: relative;                              /* Needed for stars */
 }
 
 /* =========================
-   3. TYPOGRAPHY
+   3. TEXT STYLES
    ========================= */
 
 h1 {
   font-family: 'Baloo 2', cursive;                  /* Cute title font */
-  font-size: 4rem;                                 /* Large heading */
+  font-size: 4rem;                                 /* Big title */
   color: #FFF5E1;                                  /* Soft cream color */
   text-align: center;                              /* Center text */
   margin-bottom: 1rem;                             /* Space below */
-  animation: bounce 2s infinite;                   /* Cute bouncing effect */
+  animation: bounce 2s infinite;                   /* Bouncy animation */
 }
 
 h2 {
@@ -50,63 +50,62 @@ h2 {
 }
 
 p {
-  font-size: 1.2rem;                               /* Comfortable reading size */
-  color: #333;                                     /* Dark text for contrast */
-  max-width: 600px;                                /* Prevents very long lines */
+  font-size: 1.2rem;                               /* Readable text size */
+  color: #333;                                     /* Dark gray text */
+  max-width: 600px;                                /* Prevent long lines */
   text-align: center;
   margin-bottom: 2rem;
 }
 
 /* =========================
-   4. BUTTON (CALL TO ACTION)
+   4. BUTTON
    ========================= */
 
 .cta-button {
   background-color: #A8E6CF;                       /* Soft green */
   color: #5D5CFF;                                  /* Blue text */
   padding: 12px 30px;                              /* Button size */
-  border: none;                                    /* Removes border */
+  border: none;                                    /* No border */
   border-radius: 25px;                             /* Rounded corners */
   font-size: 1.2rem;
-  cursor: pointer;                                 /* Pointer on hover */
-  transition: all 0.3s ease;                       /* Smooth hover effect */
+  cursor: pointer;                                 /* Pointer cursor */
+  transition: all 0.3s ease;                       /* Smooth hover */
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);            /* Soft shadow */
 }
 
 .cta-button:hover {
-  transform: scale(1.1);                           /* Slight zoom */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);           /* Stronger shadow */
+  transform: scale(1.1);                           /* Grow on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);           /* Deeper shadow */
 }
 
 /* =========================
-   5. MASCOT (CIRCULAR LOTTIE)
+   5. MASCOT (CIRCLE IN CORNER)
    ========================= */
 
-/* Circle container that clips the animation */
 .mascot-circle {
-  position: fixed;                                 /* Stays on screen */
+  position: fixed;                                 /* Stays in corner */
   bottom: 20px;                                    /* Distance from bottom */
   right: 20px;                                     /* Distance from right */
-  width: 220px;
+  width: 220px;                                    /* Circle size */
   height: 220px;
-  border-radius: 50%;                              /* Makes it a circle */
+  border-radius: 50%;                              /* Makes circle */
   overflow: hidden;                                /* Clips square animation */
   background-color: #FFF5E1;                       /* Cute background */
   display: flex;                                   /* Center animation */
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);          /* Floating effect */
-  animation: float 3s ease-in-out infinite;        /* Gentle floating */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);          /* Floating look */
+  animation: float 3s ease-in-out infinite;        /* Gentle movement */
+  z-index: 10;                                     /* On top of stars */
 }
 
-/* Lottie animation inside the circle */
+/* Make animation fill the circle */
 .mascot-circle dotlottie-wc {
-  width: 100%;                                     /* Fill container */
+  width: 100%;
   height: 100%;
-  background-color: transparent;                   /* No extra background */
 }
 
-/* Hover interaction for mascot */
+/* Small hover effect */
 .mascot-circle:hover {
   transform: scale(1.05);                          /* Slight zoom */
 }
@@ -120,15 +119,15 @@ p {
   width: 10px;
   height: 10px;
   background-color: #FFF5E1;                       /* Star color */
-  border-radius: 50%;                              /* Makes them round */
-  animation: starFloat 5s infinite;                /* Slow movement */
+  border-radius: 50%;                              /* Round shape */
+  animation: starFloat 5s infinite;                /* Floating effect */
 }
 
 /* =========================
    7. ANIMATIONS
    ========================= */
 
-/* Bounce animation for main title */
+/* Title bounce animation */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);                      /* Normal position */
@@ -141,7 +140,7 @@ p {
   }
 }
 
-/* Floating animation for mascot */
+/* Mascot floating animation */
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -154,7 +153,7 @@ p {
   }
 }
 
-/* Floating animation for stars */
+/* Stars floating animation */
 @keyframes starFloat {
   0% {
     transform: translateY(0) translateX(0);

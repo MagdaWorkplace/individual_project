@@ -1,92 +1,171 @@
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* =========================
+   1. GLOBAL RESET
+   ========================= */
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #8EC5FC, #D9C0FF);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow-x: hidden;
-  position: relative;
+/* Removes default browser spacing and makes sizing predictable */
+* {
+  margin: 0;                 /* Removes default margins */
+  padding: 0;                /* Removes default padding */
+  box-sizing: border-box;    /* Includes padding/border in width & height */
 }
 
+/* =========================
+   2. BODY / PAGE LAYOUT
+   ========================= */
+
+body {
+  font-family: 'Poppins', sans-serif;              /* Default font for text */
+  background: linear-gradient(135deg,              /* Soft gradient background */
+    #8EC5FC,
+    #D9C0FF
+  );
+  min-height: 100vh;                               /* Full screen height */
+  display: flex;                                   /* Enables flexbox */
+  flex-direction: column;                          /* Stack items vertically */
+  align-items: center;                             /* Center horizontally */
+  justify-content: center;                         /* Center vertically */
+  overflow-x: hidden;                              /* Prevents horizontal scroll */
+  position: relative;                              /* Needed for absolute elements */
+}
+
+/* =========================
+   3. TYPOGRAPHY
+   ========================= */
+
 h1 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 4rem;
-  color: #FFF5E1;
-  text-align: center;
-  margin-bottom: 1rem;
-  animation: bounce 2s infinite;
+  font-family: 'Baloo 2', cursive;                  /* Cute title font */
+  font-size: 4rem;                                 /* Large heading */
+  color: #FFF5E1;                                  /* Soft cream color */
+  text-align: center;                              /* Center text */
+  margin-bottom: 1rem;                             /* Space below */
+  animation: bounce 2s infinite;                   /* Cute bouncing effect */
 }
 
 h2 {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', cursive;               /* Playful subtitle font */
   font-size: 2rem;
-  color: #5D5CFF;
+  color: #5D5CFF;                                  /* Blue accent */
   text-align: center;
   margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.2rem;
-  color: #333;
-  max-width: 600px;
+  font-size: 1.2rem;                               /* Comfortable reading size */
+  color: #333;                                     /* Dark text for contrast */
+  max-width: 600px;                                /* Prevents very long lines */
   text-align: center;
   margin-bottom: 2rem;
 }
 
+/* =========================
+   4. BUTTON (CALL TO ACTION)
+   ========================= */
+
 .cta-button {
-  background-color: #A8E6CF;
-  color: #5D5CFF;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
+  background-color: #A8E6CF;                       /* Soft green */
+  color: #5D5CFF;                                  /* Blue text */
+  padding: 12px 30px;                              /* Button size */
+  border: none;                                    /* Removes border */
+  border-radius: 25px;                             /* Rounded corners */
   font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;                                 /* Pointer on hover */
+  transition: all 0.3s ease;                       /* Smooth hover effect */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);            /* Soft shadow */
 }
 
 .cta-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: scale(1.1);                           /* Slight zoom */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);           /* Stronger shadow */
 }
 
-/* Teddy bear mascot */
-.mascot {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 120px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+/* =========================
+   5. MASCOT (CIRCULAR LOTTIE)
+   ========================= */
+
+/* Circle container that clips the animation */
+.mascot-circle {
+  position: fixed;                                 /* Stays on screen */
+  bottom: 20px;                                    /* Distance from bottom */
+  right: 20px;                                     /* Distance from right */
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;                              /* Makes it a circle */
+  overflow: hidden;                                /* Clips square animation */
+  background-color: #FFF5E1;                       /* Cute background */
+  display: flex;                                   /* Center animation */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);          /* Floating effect */
+  animation: float 3s ease-in-out infinite;        /* Gentle floating */
 }
 
-.mascot:hover {
-  transform: translateY(-10px) rotate(-10deg);
+/* Lottie animation inside the circle */
+.mascot-circle dotlottie-wc {
+  width: 100%;                                     /* Fill container */
+  height: 100%;
+  background-color: transparent;                   /* No extra background */
 }
 
-/* Floating stars */
+/* Hover interaction for mascot */
+.mascot-circle:hover {
+  transform: scale(1.05);                          /* Slight zoom */
+}
+
+/* =========================
+   6. FLOATING STARS
+   ========================= */
+
 .star {
-  position: absolute;
+  position: absolute;                              /* Free positioning */
   width: 10px;
   height: 10px;
-  background-color: #FFF5E1;
-  border-radius: 50%;
-  animation: float 5s infinite;
+  background-color: #FFF5E1;                       /* Star color */
+  border-radius: 50%;                              /* Makes them round */
+  animation: starFloat 5s infinite;                /* Slow movement */
 }
 
+/* =========================
+   7. ANIMATIONS
+   ========================= */
+
+/* Bounce animation for main title */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-20px); }
-  60% { transform: translateY(-10px); }
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);                      /* Normal position */
+  }
+  40% {
+    transform: translateY(-20px);                  /* Big bounce */
+  }
+  60% {
+    transform: translateY(-10px);                  /* Small bounce */
+  }
 }
 
+/* Floating animation for mascot */
 @keyframes float {
-  0% { transform: translateY(0) translateX(0); opacity: 0.8; }
-  50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
-  100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);                  /* Moves up */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation for stars */
+@keyframes starFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.8;
+  }
 }
